@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-strongly-recommended',
+    'plugin:vue-scoped-css/vue3-recommended',
     'eslint:recommended',
     '@vue/typescript/recommended',
     '@vue/prettier',
@@ -37,6 +38,7 @@ module.exports = {
 
     // vue rules
     'vue/valid-v-slot': 'warn',
+    'vue-scoped-css/enforce-style-type': ['error', { allows: ['scoped', 'module'] }],
 
     'no-var': 'error',
   },

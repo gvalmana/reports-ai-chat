@@ -39,11 +39,7 @@ const loading = computed(() => {
 })
 </script>
 
-<style lang="scss">
-body {
-  padding: 0px;
-  margin: 0px;
-}
+<style lang="scss" scoped>
 .tp-sidebar {
   @apply relative;
   @apply basis-0;
