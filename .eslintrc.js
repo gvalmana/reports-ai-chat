@@ -39,6 +39,7 @@ module.exports = {
     // vue rules
     'vue/valid-v-slot': 'warn',
     'vue-scoped-css/enforce-style-type': ['error', { allows: ['scoped', 'module'] }],
+    'vue-scoped-css/require-v-deep-argument': 'off',
 
     'no-var': 'error',
   },
