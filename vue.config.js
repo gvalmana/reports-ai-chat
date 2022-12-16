@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
-// const dependencies = require('./package.json').dependencies
+const dependencies = require('./package.json').dependencies
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin
 
@@ -25,7 +25,7 @@ const plugins = [
       pinia: { singleton: true, requiredVersion: '2.0.14' },
       vue: { singleton: true, requiredVersion: '3.2.19' },
       'vue-router': { singleton: true, requiredVersion: '4.0.16' },
-      '@alegradev/smile-ui-next': {},
+      '@alegradev/smile-ui-next': dependencies['@alegradev/smile-ui-next'],
     },
   }),
   new ExternalTemplateRemotesPlugin(),
