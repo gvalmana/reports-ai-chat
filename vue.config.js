@@ -25,6 +25,7 @@ const plugins = [
       pinia: { singleton: true, requiredVersion: '2.0.14' },
       vue: { singleton: true, requiredVersion: '3.2.19' },
       'vue-router': { singleton: true, requiredVersion: '4.0.16' },
+      '@alegradev/smile-ui-next': {},
     },
   }),
   new ExternalTemplateRemotesPlugin(),
