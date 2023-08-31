@@ -6,8 +6,7 @@ const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlug
 const { MFLiveReloadPlugin } = require('@module-federation/fmr')
 const publicPath = process.env.VUE_APP_DOMAIN
 const prefixEnvironment = process.env.VUE_APP_ENVIROMENT == 'production' ? '' : 'almost-'
-const proyect_name = 'app_alegra_template'
-const proyect_port = 1026
+const { proyect_name, proyect_port } = require('./config')
 
 const plugins = [
   new ModuleFederationPlugin({
