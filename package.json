@@ -19,7 +19,6 @@
     "vue-router": "4.0.16"
   },
   "devDependencies": {
-    "@module-federation/fmr": "0.0.7",
     "@types/webpack-env": "1.18.0",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
