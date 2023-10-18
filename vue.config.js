@@ -3,10 +3,17 @@ const dependencies = require('./package.json').dependencies
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin
 
-const { MFLiveReloadPlugin } = require('@module-federation/fmr')
 const publicPath = process.env.VUE_APP_DOMAIN
 const prefixEnvironment = process.env.VUE_APP_ENVIROMENT == 'production' ? '' : 'almost-'
 const { proyect_name, proyect_port } = require('./config')
+
+let exposes = {
+  './microfront': './src/micro/mount',
+}
+
+if (process.env.VUE_APP_ENVIROMENT == 'local') {
+  exposes = {}
+}
 
 const plugins = [
   new ModuleFederationPlugin({
@@ -15,9 +22,7 @@ const plugins = [
     remotes: {
       app_alegra_commons: `app_alegra_commons@https://${prefixEnvironment}alegra-commons.alegra.com/remoteEntry.js?v=[('0' + (new Date().getMonth()+1)).slice(-2)+('0'+new Date().getDate()).slice(-2)+new Date().getHours()]`,
     },
-    exposes: {
-      './microfront': './src/micro/mount',
-    },
+    exposes,
     shared: {
       'core-js': { singleton: true, requiredVersion: '3.8.3' },
       'lodash-es': { singleton: true, requiredVersion: '4.17.21' },
@@ -29,16 +34,6 @@ const plugins = [
   }),
   new ExternalTemplateRemotesPlugin(),
 ]
-
-if (process.env.VUE_APP_ENVIROMENT == 'local') {
-  plugins.push(
-    new MFLiveReloadPlugin({
-      port: proyect_port, // the port your app runs on
-      container: proyect_name, // the name of your app, must be unique
-      standalone: false,
-    })
-  )
-}
 
 module.exports = defineConfig({
   assetsDir: 'template-assets',
