@@ -4,8 +4,7 @@ const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin
 
 const publicPath = process.env.VUE_APP_DOMAIN
-const prefixEnvironment = process.env.VUE_APP_ENVIROMENT == 'production' ? '' : 'almost-'
-const { proyect_name, proyect_port } = require('./config')
+const { proyect_name, proyect_port, prefixEnvironment } = require('./config')
 
 let exposes = {
   './microfront': './src/micro/mount',
