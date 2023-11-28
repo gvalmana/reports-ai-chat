@@ -23,6 +23,18 @@
     "CHAT_COOKIE": "al-test-hubspot"
   },
 
+  "sandbox": {
+    "GTM_ID": "GTM-TPPVF5KP",
+    "HUBSPOT_ID": "6180490",
+    "BASE_API_URL": "https://sandbox-api.alegra.com/api/",
+    "BASE_URL": "https://sandbox-app.alegra.com/",
+    "BASE_API_CONFIG_URL": "https://sandbox-config.alegra.com/api/",
+    "BASE_API_CONTACTS_URL": "https://sandbox-api-contacts.alegra.com/api/",
+    "COOKIE_TOKEN": "al-sand-days-of-thunder",
+    "COOKIE_NOTIFICATION": "al-sand-notifications",
+    "CHAT_COOKIE": "al-sand-hubspot"
+  },
+
   "production": {
     "GTM_ID": "GTM-KQG46G",
     "HUBSPOT_ID": "6180490",
