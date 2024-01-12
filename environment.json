@@ -30,7 +30,7 @@
     "BASE_URL": "https://sandbox-app.alegra.com/",
     "BASE_API_CONFIG_URL": "https://sandbox-config.alegra.com/api/",
     "BASE_API_CONTACTS_URL": "https://sandbox-api-contacts.alegra.com/api/",
-    "COOKIE_TOKEN": "al-sand-days-of-thunder",
+    "COOKIE_TOKEN": "al-sand-auth-token",
     "COOKIE_NOTIFICATION": "al-sand-notifications",
     "CHAT_COOKIE": "al-sand-hubspot"
   },
