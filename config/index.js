@@ -12,7 +12,7 @@ function getEnvironmentPrefix() {
 }
 
 module.exports = {
-  proyect_port: 1026,
-  proyect_name: 'app_alegra_template',
+  proyect_port: 1032,
+  proyect_name: 'app_alegra_pdf_customization_engine',
   prefixEnvironment: getEnvironmentPrefix(),
 }
