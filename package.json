@@ -14,7 +14,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@alegradev/smile-ui-next": "0.0.40",
+    "@alegradev/smile-ui-next": "0.0.39",
     "core-js": "3.8.3",
     "lodash-es": "4.17.21",
     "pinia": "2.0.14",
