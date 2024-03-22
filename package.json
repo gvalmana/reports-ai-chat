@@ -15,8 +15,8 @@
     "core-js": "3.8.3",
     "lodash-es": "4.17.21",
     "pinia": "2.0.14",
-    "vue": "3.2.19",
-    "vue-router": "4.0.16"
+    "vue": "3.4.21",
+    "vue-router": "4.3.0"
   },
   "devDependencies": {
     "@types/webpack-env": "1.18.0",
