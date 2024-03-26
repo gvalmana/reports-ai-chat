@@ -2,6 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 const dependencies = require('./package.json').dependencies
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin
+const webpack = require('webpack')
 
 const publicPath = process.env.VUE_APP_DOMAIN
 const { proyect_name, proyect_port, prefixEnvironment } = require('./config')
@@ -32,6 +33,11 @@ const plugins = [
     },
   }),
   new ExternalTemplateRemotesPlugin(),
+  new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: false,
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+  }),
 ]
 
 module.exports = defineConfig({
