@@ -6,6 +6,7 @@ const webpack = require('webpack')
 
 const publicPath = process.env.VUE_APP_DOMAIN
 const { proyect_name, proyect_port, prefixEnvironment } = require('./config')
+let app_alegra_commons = `app_alegra_commons@https://${prefixEnvironment}alegra-commons.alegra.com/remoteEntry.js?v=[('0' + (new Date().getMonth()+1)).slice(-2)+('0'+new Date().getDate()).slice(-2)+new Date().getHours()]`
 
 let exposes = {
   './microfront': './src/micro/mount',
@@ -15,12 +16,16 @@ if (process.env.VUE_APP_ENVIROMENT == 'local') {
   exposes = {}
 }
 
+if (process.env.VUE_APP_ENVIROMENT == 'production') {
+  app_alegra_commons = 'https://alegra-commons-v2.alegra.com/remoteEntry.js?v=[Date.now()]'
+}
+
 const plugins = [
   new ModuleFederationPlugin({
     name: proyect_name,
     filename: 'remoteEntry.js',
     remotes: {
-      app_alegra_commons: `app_alegra_commons@https://${prefixEnvironment}alegra-commons.alegra.com/remoteEntry.js?v=[('0' + (new Date().getMonth()+1)).slice(-2)+('0'+new Date().getDate()).slice(-2)+new Date().getHours()]`,
+      app_alegra_commons,
     },
     exposes,
     shared: {
