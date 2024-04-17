@@ -17,7 +17,8 @@ if (process.env.VUE_APP_ENVIROMENT == 'local') {
 }
 
 if (process.env.VUE_APP_ENVIROMENT == 'production') {
-  app_alegra_commons = 'https://alegra-commons-v2.alegra.com/remoteEntry.js?v=[Date.now()]'
+  app_alegra_commons =
+    'app_alegra_commons@https://alegra-commons-v2.alegra.com/remoteEntry.js?v=[Date.now()]'
 }
 
 const plugins = [
