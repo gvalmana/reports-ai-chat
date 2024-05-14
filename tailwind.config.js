@@ -1,5 +1,5 @@
 const colors = require('tailwindcss/colors')
-const { theme } = require('./node_modules/@alegradev/smile-ui-next/dist/theme')
+const { theme } = require('@alegradev/smile-ui-next')
 const { proyect_name } = require('./config/index')
 
 module.exports = {
