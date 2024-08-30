@@ -5,7 +5,7 @@
       <div class="h-[56px] max-h-[56px] w-full bg-white drop-shadow"></div>
       <div class="flex w-full overflow-auto px-5 py-8 grow relative justify-center">
         <div v-if="loading" class="tp-content-loading">
-          <sm-progress-circle></sm-progress-circle>
+          <SLoader label="Cargando microfront..." />
         </div>
 
         <div v-else class="tp-content-micro">
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import { SmProgressCircle } from '@alegradev/smile-ui-next'
+import { SLoader } from '@alegradev/smile-ui-next'
 import { useAppStore } from 'app_alegra_commons/app'
 import { computed, onMounted } from 'vue'
 import AppFloatingButton from 'app_alegra_commons/appFloatingButton'
