@@ -49,7 +49,6 @@ export default defineConfig({
         './microfront': './src/micro/mount',
       },
       shared: {
-        'core-js': { singleton: true, requiredVersion: '3.8.3' },
         'lodash-es': { singleton: true, requiredVersion: '4.17.21' },
         pinia: { singleton: true, requiredVersion: '2.0.14' },
         vue: { singleton: true, requiredVersion: '3.4.21' },
