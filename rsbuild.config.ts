@@ -1,5 +1,4 @@
 import { defineConfig, loadEnv } from '@rsbuild/core'
-import { pluginNodePolyfill } from '@rsbuild/plugin-node-polyfill'
 import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { prefixEnvironment, proyect_name, proyect_port } from './config'
@@ -27,7 +26,7 @@ const moduleFederationOptions = {
 }
 
 export default defineConfig({
-  plugins: [pluginNodePolyfill(), pluginSass(), pluginVue()],
+  plugins: [pluginSass(), pluginVue()],
   html: {
     title: name,
     template: 'public/index.html',
