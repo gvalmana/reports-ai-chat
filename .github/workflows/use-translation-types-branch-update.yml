@@ -1,0 +1,12 @@
+name: Sync main to use-translation-types
+on:
+  push:
+    branches:
+      - main
+jobs:
+  sync:
+    if: github.repository == 'alegradev/app-alegra-template'
+    uses: alegradev/alegra-actions/.github/workflows/automatic-pr.yml@main
+    with:
+      base: main
+      branch: use-translation-types
