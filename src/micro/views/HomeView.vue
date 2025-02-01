@@ -1,5 +1,5 @@
 <template>
-  <sm-card class="home">
+  <SCard title="" class="home">
     <div class="home__card">
       <img alt="Vue logo" src="../assets/logo.png" />
       <HelloWorld :title="companyName"></HelloWorld>
@@ -10,25 +10,28 @@
       </nav>
 
       <div class="home__form">
-        <sm-input :label="$transF('name')" size="small" />
-        <sm-input :label="$transF('email')" size="small" />
+        <SInput v-model="name" :label="$transF('name')" size="small" />
+        <SInput v-model="email" :label="$transF('email')" size="small" />
       </div>
 
       <router-link to="/configuration/about">
-        <sm-button type="primary">
+        <SButton>
           {{ $transF('submit') }}
-        </sm-button>
+        </SButton>
       </router-link>
     </div>
-  </sm-card>
+  </SCard>
 </template>
 
 <script setup lang="ts">
-import { SmCard, SmInput, SmButton } from '@alegradev/smile-ui-next'
+import { SCard, SInput, SButton } from '@alegradev/smile-ui-next'
 import { useSessionStore } from 'app_alegra_commons/session'
 import HelloWorld from '../components/HelloWorld.vue'
 import { $transF } from 'app_alegra_commons/translate'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+
+const name = ref()
+const email = ref()
 
 const SESSION = useSessionStore()
 
