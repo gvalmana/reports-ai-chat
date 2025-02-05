@@ -1,6 +1,8 @@
 export default {
-  hello: 'Default Page',
-  name: 'name',
-  email: 'email',
-  submit: 'Save',
+  aiChat: {
+    hello: 'Hello, how can I help you?',
+    sending: 'Sending...',
+    send: 'Send',
+    placeholder: 'Write your message...',
+  },
 }
