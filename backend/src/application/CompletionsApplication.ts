@@ -1,4 +1,4 @@
-import { CompletionRepository, IAiMessage } from '@/domain/CompletionRepository'
+import { CompletionRepository, IAiMessage } from '@/domain'
 
 export class CompletionsApplication {
   constructor(private repository: CompletionRepository) {}

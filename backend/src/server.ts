@@ -1,4 +1,4 @@
-import { CompletionsController } from '@/infrastructure/controllers'
+import { CompletionsController } from '../src/infrastructure/controllers/CompletionsController'
 import express, { Router } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
