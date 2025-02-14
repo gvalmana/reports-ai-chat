@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { CompletionsApplication } from '../../application/CompletionsApplication'
-import { DeepSeekRepository } from '../../infrastructure/repositories/DeepSeekRepository'
+import { DeepSeekRepository } from '../../infrastructure/repositories'
 
 export class CompletionsController {
   static async completions(req: Request, res: Response) {

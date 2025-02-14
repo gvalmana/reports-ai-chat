@@ -22,7 +22,7 @@ export class DeepSeekRepository implements CompletionRepository {
   }): Promise<IAiMessage> {
     const completion = await this.model.chat.completions.create({
       messages,
-      model: 'deepseek-r1:1.5b',
+      model: 'deepseek-r1:14b',
       temperature: 0.7,
     })
 
