@@ -1,15 +1,16 @@
 import { Request, Response } from 'express'
 import { CompletionsApplication } from '../../application/CompletionsApplication'
-import { DeepSeekRepository } from '../../infrastructure/repositories'
+import { OpenAIRepository } from '../../infrastructure/repositories'
 
 export class CompletionsController {
   static async completions(req: Request, res: Response) {
     try {
-      const aiRepository = new DeepSeekRepository()
-      const completionsApplication = new CompletionsApplication(aiRepository)
+      const aiRepository = new OpenAIRepository()
+      const alegraApiKey: string = req.headers.authorization || ''
+      const completionsApplication = new CompletionsApplication(aiRepository, alegraApiKey)
 
       const { messages } = req.body
-      const message = await completionsApplication.run(messages)
+      const message = await completionsApplication.runWithTool(messages)
 
       res.json({ message })
     } catch (error) {
